@@ -16,7 +16,12 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libzip-dev \
     libicu-dev \
-    g++
+    g++ \
+    nodejs \
+    npm
+
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -35,6 +40,9 @@ COPY . /var/www
 
 # Copy existing application directory permissions
 RUN chown -R www-data:www-data /var/www
+
+# Install Node.js dependencies (optional, depends on your project)
+RUN npm install
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000

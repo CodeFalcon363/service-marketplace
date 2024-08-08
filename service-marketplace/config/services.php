@@ -31,4 +31,22 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT'),
+    ],
+    
+    'yahoo' => [
+        'client_id' => env('YAHOO_CLIENT_ID'),
+        'client_secret' => env('YAHOO_CLIENT_SECRET'),
+        'redirect' => env('YAHOO_REDIRECT'),
+    ],
+    
+    'apple' => [
+        'client_id' => env('APPLE_CLIENT_ID'),
+        'client_secret' => env('APPLE_CLIENT_SECRET'),
+        'redirect' => env('APPLE_REDIRECT'),
+    ],
+
 ];
